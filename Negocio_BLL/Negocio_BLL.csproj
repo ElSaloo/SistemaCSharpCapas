@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D19FFA6-F3A5-4BDA-9216-82320A9E0AE3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Negocio_BLL</RootNamespace>
+    <AssemblyName>Negocio_BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLLCliente.cs" />
+    <Compile Include="BLLClienteNormal.cs" />
+    <Compile Include="BLLClientePremium.cs" />
+    <Compile Include="BLLFormaDePago.cs" />
+    <Compile Include="BLLInformes.cs" />
+    <Compile Include="BLLLocalidad.cs" />
+    <Compile Include="BLLVehiculo.cs" />
+    <Compile Include="BLLLogin.cs" />
+    <Compile Include="BLLVendedor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Abstraccion\Abstraccion.csproj">
+      <Project>{eae52d1b-4635-47d2-a8a7-39c54b15558d}</Project>
+      <Name>Abstraccion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Acceso_DAL\Acceso_DAL.csproj">
+      <Project>{39e21ad6-5056-44cb-9d4d-a7ad80a5a13e}</Project>
+      <Name>Acceso_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades_BE\Entidades_BE.csproj">
+      <Project>{efeb87a0-4aab-401b-9900-0c4f0f9f625d}</Project>
+      <Name>Entidades_BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mapear_MPP\Mapear_MPP.csproj">
+      <Project>{af41fde1-3c3e-4f04-9590-d3a7e6a0ff8d}</Project>
+      <Name>Mapear_MPP</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
